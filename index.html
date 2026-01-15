@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday Mummy 💖</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(to bottom, #ffe6f0, #fff);
+      text-align: center;
+      font-family: 'Comic Sans MS', cursive;
+      overflow: hidden;
+    }
+
+    h1 {
+      margin-top: 40px;
+      font-size: 42px;
+      color: #d63384;
+      animation: pulse 2s infinite;
+    }
+
+    p {
+      font-size: 20px;
+      color: #444;
+      margin: 20px;
+    }
+
+    .flowers {
+      font-size: 80px;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .heart {
+      position: absolute;
+      color: pink;
+      font-size: 20px;
+      animation: fall 5s linear infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+
+    @keyframes fall {
+      0% { top: -10%; opacity: 1; }
+      100% { top: 110%; opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🌸 Happy Birthday Mummy 🌸</h1>
+
+  <div class="flowers">💐🌷🌹</div>
+
+  <p>
+    Dear Mummy ❤️<br><br>
+    You are my strength, my love, and my forever home 🏡  
+    Thank you for everything you do for me every single day 💕  
+    I am so lucky to have you 🌈
+  </p>
+
+  <p>
+    💖 Love you always 💖
+  </p>
+
+  <script>
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.innerHTML = "💖";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (Math.random() * 3 + 2) + "s";
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 5000);
+    }
+
+    setInterval(createHeart, 300);
+  </script>
+
+</body>
+</html>
